@@ -37,25 +37,31 @@ for package in \
   yazi \
   discord \
   firefox \
-  blueman \
-  bluez \
+  # blueman \
+  # bluez \
   ; do
     yay -S --noconfirm $package
     clear
 done
 
-systemctl enable bluetooth
+# systemctl enable bluetooth
 
 # Install Configs
-wal -i ~/Dotfiles/wallpapers/pywallpaper.jpg
+mkdir ~/wallpapers
+sudo cp -rf ~/Dotfiles/wallpapers/* ~/wallpapers/
+wal -i ~/wallpapers/pywallpaper.jpg
 pywalfox install
 
 sudo cp -rf ~/Dotfiles/.config/* ~/.config/
-sudo cp -rf ~/Dotfiles/wallpapers/* ~/wallpapers/
 sudo cp ~/Dotfiles/.bashrc ~/.bashrc
 
 git config --global user.email "adrien.bouvais.pro@gmail.com"
 git config --global user.name "adrien"
 ssh-keygen -t rsa -b 4096 -C "adrien.bouvais.pro@gmail.com" -f ~/.ssh/id_rsa -N ""
 
-echo "Dont forget to add Pywalfox extension to Firefox then run 'pywalfox update' https://addons.mozilla.org/en-US/firefox/addon/pywalfox/"
+cp /run/media/adrien/ARCH_202504/ssh_keys/id_rsa ~/.ssh/
+cp /run/media/adrien/ARCH_202504/ssh_keys/id_rsa.pub ~/.ssh/
+
+hyperctl reload
+echo "Dont forget to add Pywalfox extension to Firefox https://addons.mozilla.org/en-US/firefox/addon/pywalfox/"
+echo "Then run 'pywalfox update'"
