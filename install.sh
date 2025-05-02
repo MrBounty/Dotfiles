@@ -14,7 +14,7 @@ done
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
-sudo makepkg -si
+makepkg -si
 cd ~
 
 # Install yay packages
@@ -36,6 +36,7 @@ for package in \
   nvtop \
   yazi \
   discord \
+  firefox \
   blueman \
   bluez \
   ; do
@@ -49,7 +50,8 @@ systemctl enable bluetooth
 wal -i ~/Dotfiles/wallpapers/pywallpaper.jpg
 pywalfox install
 
-sudo cp -rf ~/Dotfiles/.config/* /.config/
+sudo cp -rf ~/Dotfiles/.config/* ~/.config/
+sudo cp ~/Dotfiles/.bashrc ~/.bashrc
 
 git config --global user.email "adrien.bouvais.pro@gmail.com"
 git config --global user.name "adrien"
