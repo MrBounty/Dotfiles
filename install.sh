@@ -51,6 +51,7 @@ wal -i ~/Dotfiles/wallpapers/pywallpaper.jpg
 pywalfox install
 
 sudo cp -rf ~/Dotfiles/.config/* ~/.config/
+sudo cp -rf ~/Dotfiles/wallpapers/* ~/wallpapers/
 sudo cp ~/Dotfiles/.bashrc ~/.bashrc
 
 git config --global user.email "adrien.bouvais.pro@gmail.com"
