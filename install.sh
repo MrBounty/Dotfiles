@@ -56,4 +56,4 @@ sudo cp -a ~/Dotfiles/.bashrc ~/
 
 git config --global user.email "adrien.bouvais.pro@gmail.com"
 git config --global user.name "adrien"
-
+ssh-keygen -t rsa -b 4096 -C "adrien.bouvais.pro@gmail.com" -f ~/.ssh/id_rsa -N ""
