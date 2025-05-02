@@ -80,7 +80,7 @@ window {
 #entry:selected {
     border: none;
     border-radius: 20px;
-    background-color: alpha(@background,.2);
+    background-color: rgba(0, 0, 0, 0.15);
 }
 #entry:selected #text {
     color: @mauve;

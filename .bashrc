@@ -1,7 +1,5 @@
 # ~/.bashrc
-clear && myfetch -c 8 -C " █"
 eval "$(starship init bash)"
-[[ $- != *i* ]] && return
 
 alias Settings="cd ~/.config && nvim"
 alias Phone="scrcpy --max-fps=60 --no-audio --keyboard=uhid --mouse=uhid"

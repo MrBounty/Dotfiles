@@ -3,15 +3,24 @@
 # Install pacman packages
 for package in \
   scrcpy \
+  git \
+  base-devel \
   lazygit \
+  starship \
   ; do
-    sudo pacman -S $package
+    sudo pacman -S --noconfirm $package
     clear
 done
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+sudo makepkg -si
+cd ~
 
 # Install yay packages
 for package in \
   python-pywal16 \
+  python-pywalfox \
   swww waybar \
   myfetch \
   neovim \
@@ -30,7 +39,7 @@ for package in \
   blueman \
   bluez \
   ; do
-    yay -S $package
+    yay -S --noconfirm $package
     clear
 done
 
@@ -38,22 +47,12 @@ systemctl enable bluetooth
 
 # Install Configs
 wal -i ~/Dotfiles/wallpapers/pywallpaper.jpg
+pywalfox install
 
-sudo cp -a ~/Dotfiles/.config/hypr/wallpaper.sh   ~/.config/hypr/wallpaper.sh
-sudo cp -a ~/Dotfiles/.config/wofi/config1        ~/.config/wofi/
-sudo cp -a ~/Dotfiles/.config/wofi/style1.css     ~/.config/wofi/
-sudo cp -a ~/Dotfiles/.config/hypr/hyprlock.conf  ~/.config/hypr/
-
-sudo cp -a ~/Dotfiles/.config/waybar  ~/.config/
-sudo cp -a ~/Dotfiles/.config/wofi    ~/.config/
-sudo cp -a ~/Dotfiles/.config/wlogout ~/.config/
-sudo cp -a ~/Dotfiles/.config/wal     ~/.config/
-sudo cp -a ~/Dotfiles/.config/nvim    ~/.config/
-sudo cp -a ~/Dotfiles/.config/swayn   ~/.config/
-
-sudo cp -a ~/Dotfiles/wallpapers ~/
-sudo cp -a ~/Dotfiles/.bashrc ~/
+sudo cp -rf ~/Dotfiles/.config/* /.config/
 
 git config --global user.email "adrien.bouvais.pro@gmail.com"
 git config --global user.name "adrien"
 ssh-keygen -t rsa -b 4096 -C "adrien.bouvais.pro@gmail.com" -f ~/.ssh/id_rsa -N ""
+
+echo "Dont forget to add Pywalfox extension to Firefox then run 'pywalfox update' https://addons.mozilla.org/en-US/firefox/addon/pywalfox/"
