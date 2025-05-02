@@ -18,10 +18,16 @@ class = "kitty-pulsemixer"
 size = "50% 20%"
 offset = "200%"
 
-[scratchpads.taskbar]
+[scratchpads.taskbarcpu]
 animation = "fromLeft"
 command = "kitty --class kitty-taskbar -e htop"
 class = "kitty-taskbar"
 size = "30% 80%"
 offset = "200%"
 
+[scratchpads.taskbargpu]
+animation = "fromRight"
+command = "kitty --class kitty-taskbar -e nvtop"
+class = "kitty-taskbar"
+size = "30% 80%"
+offset = "200%"
